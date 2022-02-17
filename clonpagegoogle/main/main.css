@@ -1,0 +1,214 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-family: Helvetica, sans-serif;
+}
+/* ESTILOS_HEADER*/
+
+/* - text-decoration: none -> el texto que estan dentro de el elemento a no va tener decoradores en el texto
+   - cursor:pointer: -> cada vez que el cursor toque la palabra que esta dentro del elemto a va cambair la forma del cursor*/
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* - Estilos para el header, con el width al 100% le estamos diciendo que ocupe el total del ancho de la pantalla
+ - Con el height en 60px le estamos diciendo que ocupe 60pixeles de altura*/
+
+header {
+  width: 100%;
+  height: 60px;
+}
+/*  - header_nav: especificidad / display:flex -> todos los imtems de alienaran en una sola fila en este caso esta toamdo la etiqueta de nav
+    - Justify-content: flex-end -> los items justificados por "flex" iran a la parte final de la linea */
+header nav {
+  display: flex;
+  justify-content: flex-end;
+}
+/*  - header nav .nav-rigth-section -> selector especifity (0,1,2) se esta incrustando 3 niveles de especificidad 
+    - whidth -> ancho especifico para para el display flex que contiene el nav
+    - heigth: auto -> Toma la altura de padre contededor es decir el "header"
+    - display flex -> la lista desordenada que contiene la clase .nav-rigth-section se alinearan en una sola linea 
+    - justify-contet -> Justifica el contenido al centro de su contenedor
+    - aling-items -> alinea cada uno de los elementos */
+
+header nav .nav-rigth-section {
+  width: 250px;
+  height: auto;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/* - margin-right -> agrega 10px a cada elemento tipo a
+   - color: black -> los elmentos dentro de a tendran color negro */
+
+nav .nav-rigth-section a {
+  margin-right: 10px;
+  color: black;
+}
+/* - nav .nav-rigth-section .menu-icon -> especificidad en tres niveles 
+    -  background-image: url -> El fondo del elmento sera una imagen, este caso la imagen no esta alojada en local si no en internet
+        por eso se usa el (URL) para traer la imagen de internet
+    -  background-repeat: no-repeat -> las imagenes por defecto se repiten una detreas de otra hasta ocupar el tamaños total del contendor 
+        el no-repeat hace que solo una imagen aparezca
+    -   background-position: center; -> la poscion del la imagen debe ser centrada respecto a su contenedor
+    -   background-size: contain -> la primera parte hacer referencia a la forma en como se ocupara la froma del contenedor, la porpieda cotain dce
+        que el espacio se ocupara con la misma forma del contendor
+    -   width -> altura del contenedor 
+    -   height -> ancho del contenedor   */
+
+nav .nav-rigth-section .menu-icon {
+  background-image: url("https://static.thenounproject.com/png/756729-200.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+}
+/* -boder-radius -> recorta los border a un 50% parque el contenedor se vuelva circular
+    - margin-lef -> aumenta el tamaño del margin 10px a la izquierda*/
+nav .nav-rigth-section img {
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+/*ESTILOS_MAIN*/
+
+/* - margin-top -> a la etiqueta main se le agrega un margen en la parte sperior
+   -  text-align: center; -> todos los elementos que estan contenidos dentro de el main van a centrarse en el espacio disponible */
+main {
+  margin-top: 150px;
+  text-align: center;
+}
+/*  - margin: 0 auto; el margin 0 indica que en la parte superior e inferior del contenedor tendra 0 pixeles de margin. El margin auto lo que hace es poner en el centro de la pantalla el contenido del elemento dividiendo el a igual tamaño el margen izquierdo y derecho 
+    - width: Ancho total de la clase .main-logo que a la vez es una seccion
+    - margin-bottom: Pone un margin de 35px */
+main .main-logo {
+  width: 530px;
+  margin: 0 auto;
+  margin-bottom: 35px;
+}
+
+/*main .main-input -> esta dentro del elemento section
+    - width -> Se define altura del contendor.
+    - margin: 0 auto; el margin 0 indica que en la parte superior e inferior del contenedor tendra 0 pixeles de margin. El margin auto lo que hace es poner en el centro de la pantalla el contenido del elemento dividiendo el a igual tamaño el margen izquierdo y derecho
+    - margin-bottom: Pone un margin de 35px */
+
+main .main-input {
+  width: 530px;
+  margin: 0 auto;
+  margin-bottom: 35px;
+}
+
+/*  - width -> Se define altura del contendor.
+    - border-radius: 100px; -> redondea las esquinas del contenedor
+    -  border: 1px solid #dfe1e5; -> le añade una linea de borde al contendedor
+    - display flex -> alinea todos los elementos de contenedor en una misma liena
+    - justify-content -> justifica todos los elementos al centro
+    - align-items -> */
+
+main .main-input-container {
+  width: 525px;
+  border-radius: 100px;
+  border: 1px solid #dfe1e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* main .main-input input -> selecciona el elmento del input dentro del HTLM
+ - Border:none -> elimina el borde del imput por defecto
+ - Outline: none -> elimina estilos del imput por defecto */
+
+main .main-input input {
+  width: 450px;
+  height: 40px;
+  border: none;
+  outline: none;
+}
+
+/* main .main-input-container:hover -> con la etiqueta de hover vamos se cambiar el efecto cuando el mause pasa por arriba  */
+
+main .main-input-container:hover {
+  box-shadow: 0 1px 6px 0 #20212447;
+  border-color: red;
+}
+
+main .main-input .search-icon {
+  background-image: url("https://cdn0.iconfinder.com/data/icons/google-material-design-3-0/48/ic_search_48px-512.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 18px;
+  height: 18px;
+}
+
+main .main-input .micro-icon {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/726px-Google_mic.svg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+main .main-btn {
+  width: 530px;
+  margin: 0 auto;
+}
+main .main-btn div {
+  display: inline-block;
+}
+
+main .main-btn button {
+  height: 36px;
+  background-color: #f2f2f2;
+  border: none;
+  font-size: 14px;
+  color: #5f6368;
+  border-radius: 5px;
+  padding: 0 15px;
+  margin-right: 15px;
+}
+
+main .main-btn button:hover {
+  border: 1px solid black;
+  box-shadow: 0 1px 1px red;
+  color: black;
+}
+
+footer {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  font-size: 13px;
+  background-color: #f2f2f2;
+  border-top: 1px solid gray;
+}
+
+footer ul {
+  margin: 10px;
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+}
+
+footer .footer-l {
+  justify-content: left;
+}
+footer .footer-r {
+  justify-content: right;
+}
+
+footer ul li a {
+  margin: 10px;
+  color: #5f6368;
+}
